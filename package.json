@@ -1,0 +1,22 @@
+{
+  "name": "liferay-game-room",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kenjiheigel/liferay-game-room.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kenjiheigel/liferay-game-room/issues"
+  },
+  "homepage": "https://github.com/kenjiheigel/liferay-game-room#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
