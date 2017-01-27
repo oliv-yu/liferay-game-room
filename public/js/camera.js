@@ -22,5 +22,8 @@
 	})
 	.catch(function(err) { console.log(err.name + ": " + err.message); });
 
+	var socket = io();
+
+	socket.emit('test', 'test');
 
 }());
