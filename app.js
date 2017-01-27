@@ -14,8 +14,7 @@ app.get('/', function(req, res) {
 });
 
 device.get('/', function (req, res) {
-	console.log(device.mountpath);
-	res.send('Device Page');
+	res.sendFile(__dirname + '/device/index.html');
 });
 
 io.on('connection', function(socket){
@@ -30,5 +29,6 @@ app.use('/device', device);
 app.use(express.static('public'));
 
 server.listen(9000, function () {
-  console.log('Liferay Game Room on 9000');
+	console.log('Liferay Game Room on 9000');
+	console.log('Using ', device.mountpath, 'for device connection');
 });
