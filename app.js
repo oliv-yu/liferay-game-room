@@ -3,7 +3,6 @@ var express = require('express')
 var http = require('http');
 
 var app = express();
-var device = express();
 
 var server = http.createServer(app);
 
@@ -23,10 +22,6 @@ app.get('/gameroom', function(req, res) {
 	res.sendFile(__dirname + '/gameroom/index.html');
 });
 
-device.get('/', function (req, res) {
-	res.sendFile(__dirname + '/device/index.html');
-});
-
 io.on('connection', function(socket){
 	socket.on('user-request', function(data){
 		socket.broadcast.emit('user-request');
@@ -37,11 +32,8 @@ io.on('connection', function(socket){
 	});
 });
 
-app.use('/device', device);
-
 app.use(express.static('public'));
 
 server.listen(9000, function () {
 	console.log('Liferay Game Room on 9000');
-	console.log('Using ', device.mountpath, 'for device connection');
 });
