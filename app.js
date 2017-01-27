@@ -3,6 +3,7 @@ var express = require('express')
 var http = require('http');
 
 var app = express();
+var device = express();
 
 var server = http.createServer(app);
 
@@ -12,6 +13,11 @@ app.get('/', function(req, res) {
 	res.sendFile(__dirname + '/camera-example/index.html');
 });
 
+device.get('/', function (req, res) {
+	console.log(device.mountpath);
+	res.send('Device Page');
+});
+
 io.on('connection', function(socket){
   console.log('a user connected');
 	socket.on('test', function(data){
@@ -19,6 +25,7 @@ io.on('connection', function(socket){
 	});
 });
 
+app.use('/device', device);
 
 app.use(express.static('public'));
 
