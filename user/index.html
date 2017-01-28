@@ -2,13 +2,22 @@
 <html>
 <head>
 	<title>GAME ROOM</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Caveat+Brush" rel="stylesheet">
 	<link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
 	<h1>LIFERAY GAMEROOM</h1>
-	<canvas id="canvas-pingpong" width="300" height="300"></canvas>
-	<canvas id="canvas-foosball" width="300" height="300"></canvas>
+	<section id="cameras">
+		<section id="game">
+			<h2>PING PONG</h2>
+			<canvas id="canvas-pingpong" width="300" height="300"></canvas>
+		</section>
+		<section id="game">
+			<h2>FOOSBALL</h2>
+			<canvas id="canvas-foosball" width="300" height="300"></canvas>
+		</section>
+	</section>
 	<input id="take-photo" type="button" value="Update"></input>
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="js/user.js"></script>
