@@ -10,6 +10,12 @@ h1 {
     margin: 4% auto 1% auto;
 }
 
+header {
+	font-style: Courier New;
+	font-size: 30px;
+	text-align: center;
+}
+
 input[type="button"]{
 	background-color: rgb(124, 195, 225);
 	width: 200px;
