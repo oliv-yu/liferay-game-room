@@ -23,8 +23,8 @@ input[type="button"]{
     font-family: 'Caveat Brush', cursive;
 }
 
-#canvas-update{
-	width: 500px;
+canvas{
+	width: 300px;
 	display: block;
     margin: auto;
     border: 8px solid rgb(124, 195, 225);

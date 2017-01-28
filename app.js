@@ -18,22 +18,35 @@ app.get('/', function(req, res) {
 	res.sendFile(__dirname + '/user/index.html');
 });
 
-app.get('/gameroom', function(req, res) {
-	res.sendFile(__dirname + '/gameroom/index.html');
+// app.get('/pingpong', function(req, res) {
+// 	res.sendFile(__dirname + '/gameroom/index.html');
+// });
+
+app.get('/pingpong', function(req, res) {
+	res.sendFile(__dirname + '/pingpong/index.html');
 });
+
+app.get('/foosball', function(req, res) {
+	res.sendFile(__dirname + '/foosball/index.html');
+});
+
 
 io.on('connection', function(socket){
 	socket.on('user-request', function(data){
 		socket.broadcast.emit('user-request');
 	});
 
-	ss(socket).on('image', function(stream, data) {
-		socket.broadcast.emit('update-room', data);
+	ss(socket).on('pingpong', function(stream, data) {
+		socket.broadcast.emit('update-pingpong', data);
+	});
+
+	ss(socket).on('foosball', function(stream, data) {
+		socket.broadcast.emit('update-foosball', data);
 	});
 });
 
 app.use(express.static('public'));
 
-server.listen(80, function () {
+server.listen(9000, function () {
 	console.log('Liferay Game Room on 80');
 });
