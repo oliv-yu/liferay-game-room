@@ -9,9 +9,9 @@
 
 	var socket = io();
 
-	setInterval(function() {
+	buttonTakePhoto.onclick = function() {
 		socket.emit('user-request');
-	}, 500);
+	};
 
 	socket.on('update-room', function(data){
 		var image = new Image();
